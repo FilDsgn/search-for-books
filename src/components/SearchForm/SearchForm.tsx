@@ -4,7 +4,8 @@ import { booksSlice } from "../../store/reducers/BooksSlice";
 import "./SearchForm.scss";
 
 import block from "bem-cn-lite";
-import Select from "../Select/Select";
+import SelectForm from "../Select/Select";
+import { optionsCategories, optionsSortingBy } from "../../utils/selectOptions";
 const b = block("search-form");
 
 const SearchForm = () => {
@@ -48,19 +49,8 @@ const SearchForm = () => {
         </form>
       </div>
       <div className={b("select-wrapper")}>
-        <Select
-          title="Categories"
-          options={[
-            "all",
-            "art",
-            "biography",
-            "computers",
-            "history",
-            "medical",
-            "poetry",
-          ]}
-        />
-        <Select title="Sorting by" options={["relevance", "newest"]} />
+        <SelectForm title="Categories" options={optionsCategories} />
+        <SelectForm title="Sorting by" options={optionsSortingBy} />
       </div>
     </section>
   );
