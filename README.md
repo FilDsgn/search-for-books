@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Search For Book
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Посмотреть сайт можно здесь: [Search For Book](https://65cb435b18750a00a81723ad--resilient-basbousa-d26ab9.netlify.app/).
 
 ## Available Scripts
 
