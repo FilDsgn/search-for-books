@@ -1,0 +1,91 @@
+$block: '.select';
+
+#{$block} {
+  width: 100%;
+  box-sizing: border-box;
+  
+  &__title {
+    font-size: 20px;
+    margin-bottom: 13px;
+    font-weight: 500;
+  }
+
+  &__container {
+    background-color: #F4F4F4;
+    border-radius: 9px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    transition: .1s;
+    padding-right: 20px;
+
+    &:has(#{$block}__form:focus-within) {
+      outline: var(--g-color-base-brand) 2px solid;
+    }
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 20px;
+    max-width: 620px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.1;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__form-option{
+    color: red;
+  }
+
+}
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #A0A0A0;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #A0A0A0;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #A0A0A0;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #A0A0A0;
+}
+
+@media screen and (max-width: 830px) {
+  #{$block} {
+    &__title {
+      font-size: 16px;
+    }
+
+    &__form {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #{$block} {
+    &__title {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    &__form {
+      padding: 10px 10px;
+      font-size: 12px;
+    }
+  }
+}
