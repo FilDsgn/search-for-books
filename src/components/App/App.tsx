@@ -1,22 +1,18 @@
-import React from "react";
 import "./App.scss";
+import block from "bem-cn-lite";
+import Header from "../Header/Header";
+import BooksCardList from "../BooksCardList/BooksCardList";
+
+import Footer from "../Footer/Footer";
+
+const b = block("app");
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={b()}>
+      <Header />
+      <BooksCardList />
+      <Footer />
     </div>
   );
 }

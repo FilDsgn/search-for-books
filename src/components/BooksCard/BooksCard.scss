@@ -1,0 +1,68 @@
+$block: '.books-card';
+
+@mixin text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+@keyframes ani {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+#{$block} {
+  width: 100%;
+  background-color: #F3F2F1;
+  border-radius: 20px;
+  box-sizing: border-box;
+  animation: ani 0.5s forwards;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    transform: scale(1.05, 1.05);
+    box-shadow: 5px 8px 14px rgba($color: #000, $alpha: 0.05);
+  }
+
+  &__container {
+    max-width: 754px;
+    width: 100%;
+    height: 435px;
+    padding: 35px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__image {
+    height: 250px;
+    width: 180px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 30px;
+    box-shadow: 5px 8px 14px rgba($color: #000, $alpha: 0.1);
+  }
+
+  &__info-wrapper {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__category {
+    @include text
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  &__author {
+    @include text
+  }
+}
