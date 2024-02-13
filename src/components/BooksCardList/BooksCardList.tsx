@@ -50,7 +50,7 @@ const BooksCardList = () => {
       <span className={b("message")}>
         {searchText ? `Found ${resultsCount} results` : "Enter your request"}
       </span>
-      <div className={b("container")}>
+      <section className={b("container")}>
         {booksData &&
           booksData.map((book: IBook) => {
             return (
@@ -75,7 +75,7 @@ const BooksCardList = () => {
               />
             );
           })}
-      </div>
+      </section>
       {isFetching && (
         <div className={b("loader")}>
           <Oval

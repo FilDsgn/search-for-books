@@ -1,5 +1,14 @@
 $block: '.select';
 
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 #{$block} {
   width: 100%;
   box-sizing: border-box;
@@ -10,57 +19,32 @@ $block: '.select';
     font-weight: 500;
   }
 
-  &__container {
-    background-color: #F4F4F4;
-    border-radius: 9px;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    transition: .1s;
-    padding-right: 20px;
-
-    &:has(#{$block}__form:focus-within) {
-      outline: var(--g-color-base-brand) 2px solid;
+  &__custom-select {
+    &__control {
+      padding: 5px 10px !important;
+      cursor: pointer !important;
+      background-color: #F4F4F4 !important;
+      border-radius: 9px !important;
+      &--menu-is-open {
+        border-color: var(--g-color-base-brand) !important;
+      }
+    }
+  
+    &__option {
+      cursor: pointer !important;
+      border-radius: 6px !important;
+  
+      &--is-selected {
+        background-color: var(--g-color-base-brand) !important;
+      }
+    }
+  
+    &__menu {
+      color: black !important;
+      animation: scaleIn .2s ease-in-out;
+      border-radius: 9px !important;
     }
   }
-
-  &__form {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 12px 20px;
-    max-width: 620px;
-    width: 100%;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.1;
-    border: none;
-    background: none;
-    cursor: pointer;
-
-    &:focus {
-      outline: none;
-    }
-  }
-
-  &__form-option{
-    color: red;
-  }
-
-}
-
-
-::-webkit-input-placeholder { /* WebKit browsers */
-  color: #A0A0A0;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color: #A0A0A0;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color: #A0A0A0;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-  color: #A0A0A0;
 }
 
 @media screen and (max-width: 830px) {
@@ -69,9 +53,11 @@ $block: '.select';
       font-size: 16px;
     }
 
-    &__form {
-      padding: 10px 20px;
-      font-size: 16px;
+    &__custom-select {
+      &__control {
+        font-size: 16px !important;
+        padding: 3px 10px !important;
+      }
     }
   }
 }
@@ -86,6 +72,17 @@ $block: '.select';
     &__form {
       padding: 10px 10px;
       font-size: 12px;
+    }
+
+    &__custom-select {
+      &__control {
+        font-size: 12px !important;
+        padding: 0 3px !important;
+      }
+    
+      &__option {
+        font-size: 12px !important;
+      }
     }
   }
 }
